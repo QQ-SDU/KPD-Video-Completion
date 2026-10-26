@@ -1,0 +1,18 @@
+{
+  "package": "FIG1_3DEV_KPD_TSVD_FINAL",
+  "purpose": "Manuscript Fig. 1 representation-efficiency study",
+  "methods": [
+    "KPD-CLSA",
+    "Matrix-SVD",
+    "t-SVD",
+    "Tucker-HOSVD"
+  ],
+  "development_videos": [
+    "Akiyo",
+    "Foreman",
+    "Mobile"
+  ],
+  "main_entry": "RUN_FIG1_3DEV_PAPER.bat",
+  "replot_entry": "RUN_REPLOT_ONLY.bat",
+  "smoke_test": "RUN_SMOKE_TEST.bat"
+}

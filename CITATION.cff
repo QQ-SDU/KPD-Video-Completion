@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this research code, please cite the accompanying paper."
+type: software
+title: "Kronecker-Structured Video Completion with Cross-Fitted Self-Supervised Residual Learning"
+authors:
+  - family-names: "Qi"
+    given-names: "Qi"
+  - family-names: "Wang"
+    given-names: "Yanfei"
+  - family-names: "Cui"
+    given-names: "Yanjun"
+  - family-names: "Feng"
+    given-names: "Jun-e"
+license: MIT

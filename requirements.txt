@@ -1,0 +1,12 @@
+# Portable Python scientific dependencies for this repository.
+# Python 3.10 was recommended by the supplied project. Install PyTorch separately
+# with a build compatible with your GPU/CUDA (see README.md).
+numpy==1.26.4
+scipy==1.11.4
+scikit-image==0.22.0
+opencv-python==4.10.0.84
+pandas==2.2.3
+matplotlib==3.8.4
+Pillow==10.4.0
+h5py==3.12.1
+tqdm==4.67.1

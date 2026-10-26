@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+# Experiments and local data
+/data/
+/results/
+/outputs/
+/output/
+/logs/
+/checkpoints/
+weights/
+**/results/
+**/results_*/
+**/output/
+**/outputs/
+**/parallel_logs_v15/
+**/parallel_journals/
+**/data/davis2017_rgb_360p_f050/
+*.npy
+*.npz
+*.mat
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.mp4
+*.avi
+*.y4m
+*.zip
+*.7z
+*.tar
+*.gz
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# External baseline implementations must be separately installed; preserve tracked integration bridges via force-add where appropriate
+benchmark_suite/Methods/*/model/
+benchmark_suite/Methods/*/third_party/
+benchmark_suite/Methods/KBR/lib/
+benchmark_suite/Methods/SALTS/tensor_toolbox-master/
+
+# Local reference datasets and standalone RGB re-runs
+/local_runs/
+/benchmarks_local/

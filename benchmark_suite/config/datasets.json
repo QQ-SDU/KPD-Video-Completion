@@ -1,0 +1,37 @@
+{
+  "defaults": {
+    "layout": "HWT",
+    "input_key": null,
+    "max_frames": null,
+    "resize_height": null,
+    "resize_width": null,
+    "recursive": false,
+    "enabled": true,
+    "protocol": "generic"
+  },
+  "datasets": [
+    {
+      "name": "formal23",
+      "enabled": true,
+      "root": "data/formal23",
+      "layout": "HWT",
+      "input_key": null,
+      "max_frames": null,
+      "resize_height": null,
+      "resize_width": null,
+      "recursive": false,
+      "protocol": "formal23",
+      "expected_count": 23,
+      "frame_policy_by_hw": {
+        "144x176": 100,
+        "288x352": 50
+      },
+      "expected_hw_counts": {
+        "144x176": 17,
+        "288x352": 6
+      },
+      "auto_manifest": true,
+      "notes": "Formal 23-video protocol. Existing V1.2 data/results can be imported without rerunning completed tasks."
+    }
+  ]
+}

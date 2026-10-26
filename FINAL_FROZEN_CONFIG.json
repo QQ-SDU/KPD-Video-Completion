@@ -1,0 +1,92 @@
+{
+  "release": "v14_final",
+  "lineage": "DAVIS 360p RGB nine-method v8; Ours CrossFit final implementation from validated v9-v13",
+  "data": {
+    "dataset": "DAVIS 2017",
+    "source_jpeg_subdirectory": "JPEGImages/480p",
+    "frame_policy": "first 50 consecutive frames",
+    "size_hwtc": [
+      360,
+      640,
+      50,
+      3
+    ],
+    "color": "RGB",
+    "mask": "fixed spatial tube-wise shared across frames and channels",
+    "seed": 20261014,
+    "observation_rates": [
+      0.2,
+      0.3,
+      0.4
+    ]
+  },
+  "frozen_ours": {
+    "kpd_rank": 12,
+    "cnn_hidden": 32,
+    "temporal_kernel": 3,
+    "spatial_kernel": 3,
+    "training_steps": 3600,
+    "training_patch_t_h_w": [
+      16,
+      96,
+      96
+    ],
+    "crossfit_folds": 5,
+    "masked_kpd_sweeps": 12,
+    "batch_size": 2,
+    "max_residual": 0.25
+  },
+  "parameter_selection": {
+    "video": "blackswan",
+    "size": "360p RGB",
+    "observed_rate": 0.3,
+    "role": "development/exploratory",
+    "apply_same_config_to_other_sequences": true
+  },
+  "formal_methods": [
+    "DRO-TFF",
+    "HLRTF",
+    "KBR",
+    "LRTFR",
+    "OTLRM",
+    "TNN",
+    "SALTS",
+    "S2NTNN",
+    "Ours-Frozen"
+  ],
+  "visual_main_8_columns": [
+    "Observed",
+    "KBR",
+    "TNN",
+    "SALTS",
+    "S2NTNN",
+    "Ours-Original",
+    "Ours-Frozen",
+    "GT"
+  ],
+  "visual_supplement_12_columns": [
+    "Observed",
+    "DRO-TFF",
+    "HLRTF",
+    "KBR",
+    "LRTFR",
+    "OTLRM",
+    "TNN",
+    "SALTS",
+    "S2NTNN",
+    "Ours-Original",
+    "Ours-Frozen",
+    "GT"
+  ],
+  "note": "Frozen model configuration only. Ours-CrossFit is fit to observations of each sequence, not a pre-trained fixed-weight model.",
+  "recommended_parallel": {
+    "system_ram_gb": 128,
+    "gpu_vram_gb": 16,
+    "cpu_cores": 16,
+    "cpu_threads": 32,
+    "matlab_workers": 2,
+    "matlab_threads_per_worker": 4,
+    "gpu_workers": 1,
+    "note": "Concurrency is a runtime-only option, frozen algorithm parameters unchanged."
+  }
+}

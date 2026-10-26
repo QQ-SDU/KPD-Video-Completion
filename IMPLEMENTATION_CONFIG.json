@@ -1,0 +1,108 @@
+{
+  "paper": "Kronecker-Structured Video Completion with Cross-Fitted Self-Supervised Residual Learning",
+  "development": {
+    "videos": [
+      "Akiyo",
+      "Foreman",
+      "Mobile"
+    ],
+    "sampling_rate": 0.2,
+    "train_fraction": 0.8
+  },
+  "backbone": {
+    "rank_K": 4,
+    "masked_sweeps_S": 12,
+    "lambda_s": 0.005,
+    "lambda_t": 0.05,
+    "lambda_0": 1e-05,
+    "scale_balancing": true,
+    "warm_initialization": "smooth_fill: mean fill + 12 iterations uniform_filter size (5,5,3), observed entries clamped"
+  },
+  "crossfit": {
+    "folds_F": 5
+  },
+  "cnn": {
+    "input_channels": [
+      "B_K",
+      "E_c",
+      "M_c",
+      "H_s(B_K)"
+    ],
+    "hidden_channels": 12,
+    "max_residual": 0.25,
+    "patch_T_H_W": [
+      16,
+      48,
+      48
+    ],
+    "batch_size": 2,
+    "steps": 1200,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "gradient_clip_norm": 3.0
+  },
+  "loss": {
+    "smooth_l1_beta": 0.02,
+    "detail_weight_eta": 2.0,
+    "magnitude_scale_tau": 0.05,
+    "magnitude_cap_kappa": 3.0,
+    "residual_penalty_mu": 0.0001
+  },
+  "benchmark23": {
+    "sampling_rates": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "methods": [
+      "DRO-TFF",
+      "HLRTF",
+      "KBR",
+      "LRTFR",
+      "OTLRM",
+      "TNN",
+      "SALTS",
+      "S2NTNN",
+      "Ours"
+    ],
+    "psnr": "full-video",
+    "ssim": "frame-wise full-frame mean",
+    "temporal_gradient_mae": "missing tubes",
+    "data_consistency": true
+  },
+  "color_structured": {
+    "videos": [
+      "Coastguard",
+      "Container"
+    ],
+    "masks": [
+      "block",
+      "grid"
+    ],
+    "missing_ratio": "approximately 6%",
+    "rgb_channels": "reconstructed independently with one shared spatial tube mask across frames and channels",
+    "psnr": "missing entries",
+    "ssim": "frame-wise RGB full-frame mean"
+  },
+  "fig1": {
+    "videos": [
+      "Akiyo",
+      "Foreman",
+      "Mobile"
+    ],
+    "methods": [
+      "KPD-CLSA",
+      "Matrix-SVD",
+      "t-SVD",
+      "Tucker-HOSVD"
+    ],
+    "K_backbone": 4
+  },
+  "randomness": {
+    "policy": "No experiment seed is fixed by this package.",
+    "default_behavior": "If a top-level runner is executed without --seed, it generates and prints a fresh seed for that run.",
+    "optional_reproducibility": "Users may provide --seed <integer> explicitly when they want a repeatable run."
+  }
+}

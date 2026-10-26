@@ -1,0 +1,13 @@
+# LEGACY REPRODUCTION ONLY: do NOT use on RTX 5080. Use SETUP_KPD_5080.bat.
+# Paper environment reference
+# Python 3.10 is recommended (install interpreter separately; not a pip package)
+torch==2.0.1
+numpy==1.26.4
+scipy>=1.10
+scikit-image>=0.22
+matplotlib>=3.7
+pandas>=1.5
+Pillow>=10
+
+# DAVIS frame preprocessing
+opencv-python>=4.7

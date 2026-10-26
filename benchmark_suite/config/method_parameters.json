@@ -1,0 +1,85 @@
+{
+  "TNN": {
+    "tol": 1e-08,
+    "max_iter": 500,
+    "rho": 1.1,
+    "mu": 0.0001,
+    "max_mu": 10000000000.0
+  },
+  "KBR": {
+    "tol": 1e-05,
+    "maxIter": 1000,
+    "maxSubiter": 1,
+    "rho": 1.05,
+    "mu": 1e-05,
+    "lambda": 0.1
+  },
+  "SALTS": {
+    "R": "size(data)",
+    "lambda": [
+      1,
+      1,
+      1
+    ]
+  },
+  "S2NTNN": {
+    "max_iter": 7000,
+    "lr": 0.001,
+    "lambda_nuc": 2e-07,
+    "n4_mult": 2.0
+  },
+  "HLRTF": {
+    "max_iter": 4000,
+    "lr": 0.003,
+    "gamma": 1e-09,
+    "shrink": 5,
+    "expand": 1
+  },
+  "LRTFR": {
+    "max_iter": 3001,
+    "lr": 0.0001,
+    "weight_decay": 3.0,
+    "omega": 2.0,
+    "down": [
+      2,
+      2,
+      1
+    ]
+  },
+  "DRO-TFF": {
+    "max_iter": 4000,
+    "lr": 0.002,
+    "beta": 0.7,
+    "omega": 2,
+    "layers": 3,
+    "gamma": 0.0
+  },
+  "OTLRM": {
+    "max_iter": 6000,
+    "lr": 0.002,
+    "shrink": 6,
+    "gamma": 2e-08,
+    "weight_decay": 1e-07
+  },
+  "Ours": {
+    "rank": 4,
+    "masked_sweeps": 12,
+    "lambda_s": 0.005,
+    "lambda_t": 0.05,
+    "lambda_0": 1e-05,
+    "crossfit_folds": 5,
+    "hidden": 12,
+    "max_residual": 0.25,
+    "patch_t": 16,
+    "patch_h": 48,
+    "patch_w": 48,
+    "batch_size": 2,
+    "steps": 1200,
+    "lr": 0.001,
+    "smooth_l1_beta": 0.02,
+    "detail_weight": 2.0,
+    "magnitude_scale": 0.05,
+    "magnitude_cap": 3.0,
+    "residual_penalty": 0.0001
+  }
+}

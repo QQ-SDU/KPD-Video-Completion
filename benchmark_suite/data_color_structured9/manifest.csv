@@ -1,0 +1,4 @@
+video,file,width,height,max_frames,format,enabled,roi_x,roi_y,roi_w,roi_h,preview_frame
+Bus,bus_cif.y4m,,,30,y4m,1,225,120,55,55,14
+Coastguard,coastguard_qcif.y4m,,,30,y4m,1,88,52,34,34,14
+Container,container_qcif.y4m,,,30,y4m,1,92,38,36,36,14

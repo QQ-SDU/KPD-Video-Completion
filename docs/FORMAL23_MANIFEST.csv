@@ -1,0 +1,24 @@
+﻿name,file,width,height,frames,group
+Akiyo,akiyo_qcif.y4m,176,144,100,low
+Bridge Close,bridge_close_qcif.y4m,176,144,100,low
+Bridge Far,bridge_far_qcif.y4m,176,144,100,low
+Carphone,carphone_qcif.y4m,176,144,100,low
+Claire,claire_qcif.y4m,176,144,100,low
+Coastguard,coastguard_qcif.y4m,176,144,100,low
+Container,container_qcif.y4m,176,144,100,low
+Foreman,foreman_qcif.y4m,176,144,100,low
+Grandma,grandma_qcif.y4m,176,144,100,low
+Hall Monitor,hall_monitor_qcif.y4m,176,144,100,low
+Highway,highway_qcif.y4m,176,144,100,low
+Miss America,miss_am_qcif.y4m,176,144,100,low
+Mother Daughter,mother_daughter_qcif.y4m,176,144,100,low
+News,news_qcif.y4m,176,144,100,low
+Salesman,salesman_qcif.y4m,176,144,100,low
+Silent,silent_qcif.y4m,176,144,100,low
+Suzie,suzie_qcif.y4m,176,144,100,low
+Bus,bus_cif.y4m,352,288,50,high
+Flower,flower_cif.y4m,352,288,50,high
+Mobile,mobile_cif.y4m,352,288,50,high
+Paris,paris_cif.y4m,352,288,50,high
+Tempete,tempete_cif.y4m,352,288,50,high
+Waterfall,waterfall_cif.y4m,352,288,50,high

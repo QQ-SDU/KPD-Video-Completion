@@ -1,0 +1,76 @@
+{
+  "version": "v15",
+  "scheduling": "MATLAB CPU 4 processes parallel with single serial Python/GPU lane",
+  "matlab_cpu_methods": [
+    "KBR",
+    "TNN",
+    "SALTS"
+  ],
+  "serial_python_methods": [
+    "DRO-TFF",
+    "HLRTF",
+    "LRTFR",
+    "OTLRM",
+    "S2NTNN",
+    "Ours-Frozen"
+  ],
+  "python_backend_note": "Python methods keep original implementation; not all necessarily use CUDA",
+  "default_cpu_jobs": 4,
+  "matlab_threads_per_job": 4,
+  "gpu_jobs": 1,
+  "train_original_ours": false,
+  "dataset": {
+    "name": "DAVIS2017",
+    "shape": [
+      360,
+      640,
+      50,
+      3
+    ],
+    "rates": [
+      0.2,
+      0.3,
+      0.4
+    ],
+    "seed": 20261014
+  },
+  "frozen_ours": {
+    "K": 12,
+    "hidden": 32,
+    "kernel": [
+      3,
+      3,
+      3
+    ],
+    "steps": 3600,
+    "patch": [
+      16,
+      96,
+      96
+    ],
+    "crossfit_folds": 5
+  },
+  "main_eight": [
+    "Observed",
+    "DRO-TFF",
+    "KBR",
+    "TNN",
+    "SALTS",
+    "S2NTNN",
+    "Ours-Frozen",
+    "GT"
+  ],
+  "supplement_eleven": [
+    "Observed",
+    "DRO-TFF",
+    "HLRTF",
+    "KBR",
+    "LRTFR",
+    "OTLRM",
+    "TNN",
+    "SALTS",
+    "S2NTNN",
+    "Ours-Frozen",
+    "GT"
+  ]
+}

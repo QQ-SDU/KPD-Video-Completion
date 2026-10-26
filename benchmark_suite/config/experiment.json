@@ -1,0 +1,78 @@
+{
+  "benchmark_name": "Kronecker-Structured Video Completion - final paper benchmark",
+  "profile_name": "paper_final_8baseline_plus_ours",
+  "sampling": {
+    "type": "mode-3 tube-wise exact-count spatial mask",
+    "sampling_rates": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "seeds": [],
+    "seed_policy": "runtime-selected; no fixed seed stored in the package"
+  },
+  "methods": {
+    "matlab": [
+      "TNN",
+      "KBR",
+      "SALTS"
+    ],
+    "python": [
+      "S2NTNN",
+      "HLRTF",
+      "LRTFR",
+      "DRO-TFF",
+      "OTLRM",
+      "Ours"
+    ],
+    "all": [
+      "DRO-TFF",
+      "HLRTF",
+      "KBR",
+      "LRTFR",
+      "OTLRM",
+      "TNN",
+      "SALTS",
+      "S2NTNN",
+      "Ours"
+    ]
+  },
+  "execution": {
+    "run_matlab_and_python_in_parallel": true,
+    "skip_existing_outputs": true,
+    "continue_after_method_failure": true,
+    "matlab_process_mode": "fresh_process_per_task",
+    "matlab_max_attempts": 3,
+    "python_process_mode": "fresh_process_per_task",
+    "python_max_attempts": 2,
+    "retry_delay_seconds": 5,
+    "heartbeat_seconds": 300,
+    "validate_output_after_each_task": true,
+    "quarantine_invalid_outputs": true,
+    "accept_valid_output_after_nonzero_exit": true,
+    "reuse_case_by_scientific_content": true,
+    "ignore_output_case_mtime_for_reuse": true,
+    "recover_false_stale_quarantine": true
+  },
+  "evaluation": {
+    "clip_to_0_1": true,
+    "force_data_consistency_for_all_methods": true,
+    "save_per_frame_metrics": true,
+    "metrics": [
+      "PSNR",
+      "SSIM",
+      "missing_PSNR",
+      "missing_MAE",
+      "temporal_gradient_MAE",
+      "runtime"
+    ]
+  },
+  "fairness": {
+    "same_saved_mask_for_all_methods": true,
+    "gt_forbidden_during_optimization": true,
+    "gt_forbidden_for_checkpoint_selection": true,
+    "common_posthoc_evaluator": true
+  }
+}

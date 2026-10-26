@@ -1,0 +1,3 @@
+# Install using the official PyTorch selector for your CUDA/driver or CPU.
+# This unpinned line is a placeholder, NOT a CUDA-specific reproducibility lock.
+torch
