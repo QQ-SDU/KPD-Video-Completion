@@ -31,7 +31,7 @@ import scipy.io as sio
 import torch
 
 HERE = Path(__file__).resolve().parent
-REF = HERE / "reference_v7"
+REF = HERE
 sys.path.insert(0, str(REF))
 
 from kpd_video_core import smooth_fill
@@ -88,6 +88,7 @@ def main():
     ap.add_argument("--patch-w", type=int, default=48)
     ap.add_argument("--batch-size", type=int, default=2)
     ap.add_argument("--hidden", type=int, default=12)
+    ap.add_argument("--spatial-kernel", type=int, choices=(3, 5), default=3)
     ap.add_argument("--lr", type=float, default=1e-3)
     ap.add_argument("--detail-weight", type=float, default=2.0)
     ap.add_argument("--max-residual", type=float, default=0.25)
@@ -155,7 +156,7 @@ def main():
     # -------------------------------------------------------------
     set_seed(args.seed + 1000)
     model = DetailResidualCNN(
-        hidden=args.hidden, max_residual=args.max_residual
+        hidden=args.hidden, max_residual=args.max_residual, spatial_kernel=args.spatial_kernel
     ).to(device)
 
     history = train_crossfit_tube_cnn(
@@ -237,6 +238,7 @@ def main():
             "lambda_0": args.ridge,
             "crossfit_folds": args.crossfit_folds,
             "hidden": args.hidden,
+            "spatial_kernel": args.spatial_kernel,
             "max_residual": args.max_residual,
             "patch": [args.patch_t, args.patch_h, args.patch_w],
             "batch_size": args.batch_size,

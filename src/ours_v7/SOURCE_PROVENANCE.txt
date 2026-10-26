@@ -1,4 +1,0 @@
-Source: user-uploaded project video_kpd_completion_v7_theory_aligned(2).zip
-Integrated benchmark adapter: run_same_mask.py
-The original V7 core files are preserved under reference_v7/.
-The adapter uses the exact benchmark-supplied tube mask and loads only observed + mask from the case MAT file; ground truth is not loaded by the method process.

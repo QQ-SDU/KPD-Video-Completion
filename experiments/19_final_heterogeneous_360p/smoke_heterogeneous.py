@@ -20,7 +20,7 @@ def main():
         for name in ['blackswan','camel','parkour']:
             (dav/name).mkdir(parents=True)
             (dav/name/'00000.jpg').write_bytes(b'x')
-        assert fd.scan(root/'DAVIS')[:3]==['blackswan','camel','parkour']
+        assert set(fd.scan(root/'DAVIS'))=={'blackswan','camel','parkour'}
         src=root/'source';dst=root/'new';case=fb.case_id('blackswan',.3)
         (src/'cases').mkdir(parents=True)
         fb.SHAPE=(24,32,4,3)

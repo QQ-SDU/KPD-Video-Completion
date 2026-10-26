@@ -1,6 +1,0 @@
-numpy>=1.26
-scipy>=1.10
-scikit-image>=0.22
-matplotlib>=3.7
-Pillow>=10
-# Use the existing CUDA-enabled PyTorch in the kpd_cv environment.
