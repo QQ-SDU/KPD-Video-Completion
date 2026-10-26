@@ -54,13 +54,24 @@ class DetailResidualCNN(nn.Module):
       2: visible observation mask
       3: baseline spatial high-pass map
     """
-    def __init__(self, hidden=12, max_residual=0.25):
+    def __init__(self, hidden=12, max_residual=0.25, spatial_kernel=3):
         super().__init__()
         self.max_residual = float(max_residual)
-        self.c1 = nn.Conv3d(4, hidden, 3, padding=1)
-        self.c2 = nn.Conv3d(hidden, hidden, 3, padding=2, dilation=2)
-        self.c3 = nn.Conv3d(hidden, hidden, 3, padding=1)
-        self.out = nn.Conv3d(hidden, 1, 3, padding=1)
+        if spatial_kernel not in (3, 5):
+            raise ValueError("spatial_kernel must be 3 or 5")
+        # k=3 EXACTLY reproduces the published four-convolution architecture.
+        # k=5 changes each kernel from (3,3,3) to (3,5,5), while keeping
+        # temporal support/dilation identical. Stride=1, output size unchanged.
+        k = int(spatial_kernel)
+        ks = (3, k, k)
+        p = (1, k // 2, k // 2)
+        d2 = (2, 2, 2)
+        p2 = (2, k - 1, k - 1)
+        self.spatial_kernel = k
+        self.c1 = nn.Conv3d(4, hidden, ks, padding=p)
+        self.c2 = nn.Conv3d(hidden, hidden, ks, padding=p2, dilation=d2)
+        self.c3 = nn.Conv3d(hidden, hidden, ks, padding=p)
+        self.out = nn.Conv3d(hidden, 1, ks, padding=p)
 
         # Start from "no detail correction", so epoch 0 equals KPD baseline.
         nn.init.zeros_(self.out.weight)

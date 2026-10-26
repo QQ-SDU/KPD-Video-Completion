@@ -1,3 +1,5 @@
+> For our-method-only DAVIS RGB reproduction, prefer `scripts/reproduce_rgb_ours.py` and `docs/REPRODUCE_RGB.md`. Full multi-method workflows require separate installation of external baselines. Historical development launchers have been removed.
+
 # Reproduction instructions and limitations
 
 ## Scope

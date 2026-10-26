@@ -20,6 +20,7 @@ The method reconstructs videos from tube-wise missing observations using a regul
 | `docs/REPRODUCE_RGB.md` | Step-by-step RGB reproducibility protocol |
 | `docs/SEED_POLICY.md` | Exact seed policy, including mask semantics |
 | `PAPER_CODE_MAPPING.md` | Manuscript-to-code lookup |
+| `docs/CODE_SCOPE.md` | Notes on retained experiments and consolidated implementations |
 
 This repository **does not distribute** any third-party baseline implementation, dataset, pretrained weights, or supplementary MP4 files. Existing integration adapters are not implementations of the external algorithms. For external comparisons, use the original authors' releases and licenses; see `docs/THIRD_PARTY_BASELINES.md`.
 
@@ -60,9 +61,12 @@ On Windows PowerShell, place the example command on one line or use PowerShell b
 python tools/validate_release.py
 python experiments/19_final_heterogeneous_360p/smoke_heterogeneous.py
 python experiments/19_final_heterogeneous_360p/smoke_concurrent.py
+python tools/audit_paper_release.py
 ```
 
 These checks only verify source consistency and selected synthetic workflows; they do not validate the numerical findings on the entire paper benchmark. Exact floating-point identity on GPU is not guaranteed by a seed alone. Please retain package versions, GPU specifications and execution logs.
+
+The main pipeline is the paper release rather than a historical collection of every development script. See [code scope](docs/CODE_SCOPE.md) for the removed workflows and retained compatibility utilities.
 
 ## Data, baselines and citation
 

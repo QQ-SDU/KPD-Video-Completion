@@ -31,7 +31,7 @@ import scipy.io as sio
 import torch
 
 HERE = Path(__file__).resolve().parent
-REF = HERE / "reference_v7"
+REF = HERE.parents[2] / "src" / "ours_v7"
 sys.path.insert(0, str(REF))
 
 from kpd_video_core import smooth_fill
